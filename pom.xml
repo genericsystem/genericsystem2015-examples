@@ -50,19 +50,19 @@
 <!-- 				<module>gs-cdi</module> -->
 <!-- 				<module>gs-common</module> -->
 <!-- 				<module>gs-reactor</module> -->
-<module>gs-example-angular</module>
-				<module>gs-example-reactor</module>
+<module>gs-kernel-angular</module>
+				<module>gs-reactor-example</module>
 <!-- 				<module>gs-spring</module> -->
-				<module>gs-example-spring</module>
-				<module>gs-example-jsf</module>
-				<module>gs-example-javafx</module>
-				<module>gs-todomvc</module>
-				<module>gs-carcolor</module>
-				<module>gs-extendedcarcolor</module>
+				<module>gs-kernel-spring</module>
+				<module>gs-kernel-jsf</module>
+				<module>gs-kernel-javafx</module>
+				<module>gs-reactor-todomvc</module>
+				<module>gs-reactor-carcolor</module>
+				<module>gs-reactor-carcolor-extended</module>
 <!-- 				<module>gs-security-model</module> -->
 <!-- 				<module>gs-security</module> -->
-				<module>gs-geography</module>
-				<module>gs-quiz</module>
+				<module>gs-reactor-geography</module>
+				<module>gs-reactor-quiz</module>
 <!-- 				<module>gs-events</module> -->
 <!-- 				<module>gs-cv</module> -->
 <!-- 				<module>gs-watch</module> -->
@@ -77,18 +77,18 @@
 <!-- 				<module>gs-cdi</module> -->
 <!-- 				<module>gs-common</module> -->
 <!-- 				<module>gs-reactor</module> -->
-<!-- 				<module>gs-example-reactor</module> -->
+<!-- 				<module>gs-reactor-example</module> -->
 <!-- 				<module>gs-spring</module> -->
-<!-- 				<module>gs-example-spring</module> -->
-<!-- 				<module>gs-example-jsf</module> -->
-<!-- 				<module>gs-example-javafx</module> -->
-<!-- 				<module>gs-todomvc</module> -->
-<!-- 				<module>gs-carcolor</module> -->
-<!-- 				<module>gs-extendedcarcolor</module> -->
+<!-- 				<module>gs-kernel-spring</module> -->
+<!-- 				<module>gs-kernel-jsf</module> -->
+<!-- 				<module>gs-kernel-javafx</module> -->
+<!-- 				<module>gs-reactor-todomvc</module> -->
+<!-- 				<module>gs-reactor-carcolor</module> -->
+<!-- 				<module>gs-reactor-carcolor-extended</module> -->
 <!-- 				<module>gs-security-model</module> -->
 <!-- 				<module>gs-security</module> -->
-<!-- 				<module>gs-geography</module> -->
-<!-- 				<module>gs-quiz</module> -->
+<!-- 				<module>gs-reactor-geography</module> -->
+<!-- 				<module>gs-reactor-quiz</module> -->
 <!-- 				<module>gs-events</module> -->
 <!-- 			</modules> -->
 <!-- 		</profile> -->
