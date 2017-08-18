@@ -4,9 +4,6 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
-        <dependent-module archiveName="gs-reactor-carcolor-4.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/gs-reactor-carcolor/gs-reactor-carcolor">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="gs-kernel-jsf"/>
         <property name="java-output-path" value="/gs-kernel-jsf/target/classes"/>
     </wb-module>
