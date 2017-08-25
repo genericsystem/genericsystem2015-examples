@@ -22,7 +22,7 @@ public class TypeAndSubTypes extends ExampleClass {
 		inheritance(engine);
 	}
 
-	public void typeCreation(Engine engine) {
+	private void typeCreation(Engine engine) {
 		// Create a new type
 		Generic vehicle = engine.addInstance("Vehicle");
 
@@ -34,7 +34,7 @@ public class TypeAndSubTypes extends ExampleClass {
 		engine.getCurrentCache().flush();
 	}
 
-	public void inheritance(Engine engine) {
+	private void inheritance(Engine engine) {
 		// Get the type Vehicle from the Engine
 		Generic vehicle = engine.getInstance("Vehicle");
 

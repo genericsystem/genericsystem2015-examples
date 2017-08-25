@@ -26,7 +26,7 @@ public class HoldersAndProperties extends ExampleClass {
 		properties(engine);
 	}
 
-	public void holders(Engine engine) {
+	private void holders(Engine engine) {
 		// Get the type Vehicle and its instance myVehicle from the Engine
 		Generic vehicle = engine.getInstance("Vehicle");
 		Generic myVehicle = vehicle.getInstance("myVehicle");
@@ -43,7 +43,7 @@ public class HoldersAndProperties extends ExampleClass {
 		engine.getCurrentCache().flush();
 	}
 
-	public void properties(Engine engine) {
+	private void properties(Engine engine) {
 		// Get the type Vehicle and its instances myVehicle and yourVehicle from the Engine
 		Generic vehicle = engine.getInstance("Vehicle");
 		Generic myVehicle = vehicle.getInstance("myVehicle");
