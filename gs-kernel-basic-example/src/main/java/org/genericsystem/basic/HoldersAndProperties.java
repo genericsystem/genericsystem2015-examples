@@ -22,11 +22,11 @@ public class HoldersAndProperties extends ExampleClass {
 
 	@Override
 	protected void init() {
-		holders(engine);
-		properties(engine);
+		holders();
+		properties();
 	}
 
-	private void holders(Engine engine) {
+	private void holders() {
 		// Get the type Vehicle and its instance myVehicle from the Engine
 		Generic vehicle = engine.getInstance("Vehicle");
 		Generic myVehicle = vehicle.getInstance("myVehicle");
@@ -43,7 +43,7 @@ public class HoldersAndProperties extends ExampleClass {
 		engine.getCurrentCache().flush();
 	}
 
-	private void properties(Engine engine) {
+	private void properties() {
 		// Get the type Vehicle and its instances myVehicle and yourVehicle from the Engine
 		Generic vehicle = engine.getInstance("Vehicle");
 		Generic myVehicle = vehicle.getInstance("myVehicle");

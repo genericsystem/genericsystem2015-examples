@@ -26,12 +26,12 @@ public class RelationsAndLinks extends ExampleClass {
 
 	@Override
 	protected void init() {
-		binaryRelation(engine);
-		ternaryRelation(engine);
-		unaryRelation(engine);
+		binaryRelation();
+		ternaryRelation();
+		unaryRelation();
 	}
 
-	private void binaryRelation(Engine engine) {
+	private void binaryRelation() {
 		// Get the type Vehicle and its instance myVehicle from the Engine
 		Generic vehicle = engine.getInstance("Vehicle");
 		Generic myVehicle = vehicle.getInstance("myVehicle");
@@ -71,7 +71,7 @@ public class RelationsAndLinks extends ExampleClass {
 		engine.getCurrentCache().clear();
 	}
 
-	private void ternaryRelation(Engine engine) {
+	private void ternaryRelation() {
 		// Get the elements created previously from the Engine
 		Generic vehicle = engine.getInstance("Vehicle");
 		Generic color = engine.getInstance("Color");
@@ -95,7 +95,7 @@ public class RelationsAndLinks extends ExampleClass {
 		engine.getCurrentCache().flush();
 	}
 
-	private void unaryRelation(Engine engine) {
+	private void unaryRelation() {
 		// Get the elements created previously from the Engine
 		Generic vehicle = engine.getInstance("Vehicle");
 
