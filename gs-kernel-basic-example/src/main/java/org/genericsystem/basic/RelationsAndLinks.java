@@ -56,9 +56,9 @@ public class RelationsAndLinks extends ExampleClass {
 
 		// Remove myVehicle (master)
 		myVehicle.remove();
-		System.out.println(myVehicle.isAlive());
-		System.out.println(myVehicleRed.isAlive());
-		System.out.println(red.isAlive());
+		// System.out.println(myVehicle.isAlive());
+		// System.out.println(myVehicleRed.isAlive());
+		// System.out.println(red.isAlive());
 
 		// Remove red (slave)
 		try {
