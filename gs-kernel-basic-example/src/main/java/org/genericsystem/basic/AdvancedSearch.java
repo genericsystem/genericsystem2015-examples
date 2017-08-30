@@ -65,6 +65,7 @@ public class AdvancedSearch extends ExampleClass {
 		// Persist changes
 		engine.getCurrentCache().flush();
 
+		// Perform searches
 		searchTypes();
 		searchInstances();
 		searchSubInstances();
@@ -72,6 +73,9 @@ public class AdvancedSearch extends ExampleClass {
 		searchRelations();
 		searchHolders();
 		searchLinks();
+
+		// Perform a filtered search
+		searchAndFilter();
 	}
 
 	private void searchTypes() {
@@ -95,7 +99,7 @@ public class AdvancedSearch extends ExampleClass {
 		Snapshot<Generic> vehicles = vehicle.getInstances();
 
 		// We should have at least 3 instances of Vehicle
-		Generic myFirstVehicle = vehicle.getInstance("myfirstVehicle");
+		Generic myFirstVehicle = vehicle.getInstance("myFirstVehicle");
 		Generic mySecondVehicle = vehicle.getInstance("mySecondVehicle");
 		Generic myThirdVehicle = vehicle.getInstance("myThirdVehicle");
 		assert vehicles.size() >= 3;
@@ -116,8 +120,9 @@ public class AdvancedSearch extends ExampleClass {
 		Generic yourCar = car.getInstance("yourCar");
 		Generic myBike = bike.getInstance("myBike");
 		Generic yourBike = bike.getInstance("yourBike");
+		Generic myFirstVehicle = vehicle.getInstance("myFirstVehicle");
 		assert subinstances.size() >= 4;
-		assert subinstances.containsAll(Arrays.asList(myCar, yourCar, myBike, yourBike));
+		assert subinstances.containsAll(Arrays.asList(myCar, yourCar, myBike, yourBike, myFirstVehicle));
 	}
 
 	private void searchAttributes() {
@@ -179,6 +184,37 @@ public class AdvancedSearch extends ExampleClass {
 		Generic iLoveMyCar = myCar.getLink(betterThan, "my car is better than my bike");
 		assert links.size() >= 2;
 		assert links.containsAll(Arrays.asList(myCarRocks, iLoveMyCar));
+	}
+
+	private void searchAndFilter() {
+		// Get the type Vehicle and its options from the Engine
+		Generic vehicle = engine.getInstance("Vehicle");
+		Generic options = vehicle.getAttribute("Options");
+
+		// Get all instances of Vehicle that have the Options "air conditioning"
+		Snapshot<Generic> vehicles = vehicle.getInstances()
+				// Filter the stream of Generics
+				.filter(generic -> generic.getHolders(options)
+						// Get a stream on the holders "Options"
+						.stream()
+						// Get all holders which have the "air conditioning"
+						.anyMatch(holder -> holder.getValue().equals("air conditioning")));
+
+		// This filtered search should only contain 2 instances
+		Generic myFirstVehicle = vehicle.getInstance("myFirstVehicle");
+		Generic mySecondVehicle = vehicle.getInstance("mySecondVehicle");
+		Generic myThirdVehicle = vehicle.getInstance("myThirdVehicle");
+		assert vehicles.size() == 2;
+		assert vehicles.containsAll(Arrays.asList(myFirstVehicle, myThirdVehicle));
+		assert !vehicles.contains(mySecondVehicle);
+
+		// Add another instance that should appear in the results
+		Generic myFourthVehicle = vehicle.addInstance("myFourthVehicle");
+		myFourthVehicle.addHolder(options, "air conditioning");
+
+		// And indeed, the snapshot has been updated and now contains the new vehicle
+		assert vehicles.size() == 3;
+		assert vehicles.contains(myFourthVehicle);
 	}
 
 }
